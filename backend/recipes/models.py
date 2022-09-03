@@ -1,10 +1,9 @@
 from django.core.validators import MinValueValidator
 from django.db import models
-from django.contrib.auth import get_user_model
-User = get_user_model()
+
+from users.models import User
 
 
-# Поле ингридиент
 class Ingredient(models.Model):
     name = models.CharField(
         'Название ингредиента',
@@ -28,7 +27,6 @@ class Ingredient(models.Model):
         return f'{self.name}, {self.measurement_unit}'
 
 
-# Поле Тег
 class Tag(models.Model):
     name = models.CharField(
         'Название тега',
@@ -52,7 +50,6 @@ class Tag(models.Model):
         return self.name
 
 
-# Поле рецепт
 class Recipe(models.Model):
     author = models.ForeignKey(
         User,
