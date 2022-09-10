@@ -1,41 +1,43 @@
-from rest_framework.permissions import (BasePermission,
-                                        IsAuthenticatedOrReadOnly)
+from rest_framework.permissions import SAFE_METHODS, BasePermission
 
 
-class AuthorStaffOrReadOnly(IsAuthenticatedOrReadOnly):
-    """
-    Разрешение на изменение только для служебного персонала и автора.
-    Остальным только чтение объекта.
-    """
+class IsAdminOrReadIfAuthenticatedObjPerm(BasePermission):
     def has_object_permission(self, request, view, obj):
-        return (
-            request.method in ('GET',)
-            or (request.user == obj.author)
-            or request.user.is_staff
-        )
+        if request.method in SAFE_METHODS:
+            return bool(request.user
+                        and request.user.is_authenticated)
+        return bool(request.user and request.user.is_staff)
 
 
-class AdminOrReadOnly(BasePermission):
-    """
-    Разрешение на создание и изменение только для админов.
-    Остальным только чтение объекта.
-    """
+class IsAdminOrReadOnly(BasePermission):
     def has_permission(self, request, view):
-        return (
-            request.method in ('GET',)
-            or request.user.is_authenticated
-            and request.user.is_admin
+        return bool(
+            request.method in SAFE_METHODS
+            or (request.user and request.user.is_staff)
         )
 
 
-class OwnerUserOrReadOnly(IsAuthenticatedOrReadOnly):
-    """
-    Разрешение на изменение только для админа и пользователя.
-    Остальным только чтение объекта.
-    """
+class RecipePermission(BasePermission):
+    def has_permission(self, request, view):
+        return bool(
+            request.method in SAFE_METHODS
+            or (request.user and request.user.is_authenticated)
+        )
+
     def has_object_permission(self, request, view, obj):
-        return (
-            request.method in ('GET',)
-            or (request.user == obj)
-            or request.user.is_admin
+        user = request.user
+
+        # for TOR
+        # if request.method == 'PATCH':
+        #     return bool(request.user
+        #                 and request.user.is_staff)
+
+        # for frontend
+        if request.method == 'PATCH':
+            return bool(request.user
+                        and request.user.is_authenticated)
+        return bool(
+            request.method in SAFE_METHODS
+            or (request.user and request.user.is_staff)
+            or (request.user and obj.author == user)
         )
