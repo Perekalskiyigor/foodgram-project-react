@@ -24,14 +24,6 @@ jobs:
     - name: Test with flake8
       run: |
         python -m flake8
-    - name: Test with pytest
-      run: |
-        cd backend
-        touch .env 
-        echo SECRET_KEY=${{ secrets.SECRET_KEY }} >> .env
-        echo ALLOWED_HOSTS=${{ secrets.ALLOWED_HOSTS }} >> .env
-        echo CONTACT_EMAIL=${{ secrets.CONTACT_EMAIL }} >> .env
-        echo LICENSE=${{ secrets.LICENSE }} >> .env
 
   build_and_push_to_docker_hub:
     name: Push Docker image to Docker Hub
