@@ -32,7 +32,6 @@ jobs:
         echo ALLOWED_HOSTS=${{ secrets.ALLOWED_HOSTS }} >> .env
         echo CONTACT_EMAIL=${{ secrets.CONTACT_EMAIL }} >> .env
         echo LICENSE=${{ secrets.LICENSE }} >> .env
-        pytest
 
   build_and_push_to_docker_hub:
     name: Push Docker image to Docker Hub
