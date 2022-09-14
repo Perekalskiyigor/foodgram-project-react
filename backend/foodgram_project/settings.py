@@ -9,8 +9,9 @@ load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv(
-    'SECRET_KEY', default='django-insecure-kialwu9o(&-+_7vo%f@\
-        wzda=(rj_^0w)v8bb!h!38d1l8**e^t')
+    'SECRET_KEY',
+    default=('django-insecure-kialwu9o(&-+_'
+             '7vo%f@wzda=(rj_^0w)v8bb!h!38d1l8**e^t'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # To turn off, delete whole row whith debug in .env
