@@ -10,7 +10,7 @@ services:
       - ./.env
 
   backend:
-    image: skarabey147/foodgram_backend:latest
+    image: perekalskiyigor/foodgram_backend:latest
     expose:
       - 8000
     restart: always
@@ -37,7 +37,7 @@ services:
       - frontend
 
   frontend:
-    image: skarabey147/foodgram_frontend:v1
+    image: perekalskiyigor/foodgram_frontend:v1
     volumes:
       - ../frontend/:/app/result_build/
 
