@@ -80,9 +80,9 @@ jobs:
           echo CONTACT_EMAIL=${{ secrets.CONTACT_EMAIL }} >> .env
           echo LICENSE=${{ secrets.LICENSE }} >> .env
           sudo docker-compose up -d
-          sudo docker-compose exec -T backend ./manage.py migrate --noinput
-          sudo docker-compose exec -T backend ./manage.py collectstatic --no-input
-          sudo docker-compose exec -T backend ./manage.py loaddata data/dump.json 
+          sudo docker-compose exec -T backend python manage.py migrate --noinput
+          sudo docker-compose exec -T backend python manage.py collectstatic --no-input
+          sudo docker-compose exec -T backend python manage.py loaddata data/dump.json 
 
   send_message_master:
     runs-on: ubuntu-latest
