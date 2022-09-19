@@ -1,21 +1,22 @@
+
 from django.contrib import admin
-from django.contrib.auth import get_user_model
 from django.contrib.auth.admin import UserAdmin
-from django.contrib.auth.models import Group
 
-User = get_user_model()
+from .models import CustomUser, Follow
 
 
-@admin.register(User)
 class CustomUserAdmin(UserAdmin):
-    add_fieldsets = (
-        (None, {
-            'classes': ('wide',),
-            'fields': ('username', 'password1',
-                       'password2', 'first_name',
-                       'last_name', 'email'),
-        }),
-    )
+    '''
+    add_form = CustomUserCreationForm
+    form = CustomUserChangeForm
+    '''
+    model = CustomUser
+    list_display = ('id', 'username', 'first_name', 'last_name',
+                    'email', 'password', 'is_staff', 'is_active',)
+    ordering = ('email',)
+    search_fields = ('username', 'email',)
+    ordering = ('email',)
 
 
-admin.site.unregister(Group)
+admin.site.register(CustomUser, CustomUserAdmin)
+admin.site.register(Follow)
