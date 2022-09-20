@@ -14,7 +14,7 @@ services:
             - ./.env
     
     frontend:
-        image: perekalskiyigor/infra_frontend_1:latest
+        image: perekalskiyigor/foodgram_frontend:v1
         volumes:
             - ../frontend/:/app/result_build/
         depends_on:
@@ -24,6 +24,7 @@ services:
         image: perekalskiyigor/infra_backend_1:latest
         restart: always
         volumes:
+            - data_value:/code/dj_data/
             - static_value:/code/dj_static/
             - media_value:/code/dj_media/
         depends_on:
@@ -52,3 +53,4 @@ volumes:
     postgres_data:
     static_value:
     media_value:
+    data_value:

@@ -7,12 +7,12 @@
 ## Kак запустить
 ### Kлонируем проект:
 
-git clone https://github.com/ZloyBaklan/foodgram-project-react.git
+git clone https://github.com/Perekalskiyigor/foodgram-project-react.git
 Для добавления файла .env с настройками базы данных на сервер необходимо:
 
 ### Установить соединение с сервером по протоколу ssh:
 
-ssh username@84.252.142.106
+ssh username@84.201.173.50
 Где username - имя пользователя, под которым будет выполнено подключение к серверу.
 
 server_address - IP-адрес сервера или доменное имя.
@@ -113,4 +113,4 @@ $ python manage.py createsuperuser
 
 sudo docker stop $(sudo docker ps -a -q) && sudo docker rm $(sudo docker ps -a -q) && sudo docker rmi $(sudo docker images -q)
 Автор:
-Сергей Мельников (ZloyBaklan)
+Страдалец Яндекс практикума. Perekalskiyigor  
