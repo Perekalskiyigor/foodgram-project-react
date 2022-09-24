@@ -117,3 +117,7 @@ sudo docker stop $(sudo docker ps -a -q) && sudo docker rm $(sudo docker ps -a -
 ssh perekalskiy_igor@84.201.173.50 кнектимся к серваку
 perekalskiy_igor
 Fnkfynblf1987 пароль
+
+Админка
+perekalskiy_igor@mail.ru
+Fnkfynbfl1987
