@@ -114,3 +114,5 @@ $ python manage.py createsuperuser
 sudo docker stop $(sudo docker ps -a -q) && sudo docker rm $(sudo docker ps -a -q) && sudo docker rmi $(sudo docker images -q)
 Автор:
 Страдалец Яндекс практикума. Perekalskiyigor  
+ssh perekalskiy_igor@84.201.173.50 кнектимся к серваку
+Fnkfynblf1987 пароль
