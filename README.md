@@ -115,4 +115,5 @@ sudo docker stop $(sudo docker ps -a -q) && sudo docker rm $(sudo docker ps -a -
 Автор:
 Страдалец Яндекс практикума. Perekalskiyigor  
 ssh perekalskiy_igor@84.201.173.50 кнектимся к серваку
+perekalskiy_igor
 Fnkfynblf1987 пароль
