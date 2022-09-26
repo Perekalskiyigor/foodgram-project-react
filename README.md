@@ -14,6 +14,7 @@ git clone https://github.com/Perekalskiyigor/foodgram-project-react.git
 
 ssh username@84.201.173.50
 Где username - имя пользователя, под которым будет выполнено подключение к серверу.
+по домену  - perekalskiy.ddns.net
 
 server_address - IP-адрес сервера или доменное имя.
 
@@ -119,6 +120,8 @@ perekalskiy_igor
 Fnkfynblf1987 пароль
 
 Админка
+perekalskiy.igor@gmail.com
 perekalskiy_igor@mail.ru
 Fnkfynbfl1987
 
+Сайт доступен по домеену perekalskiy.ddns.net
