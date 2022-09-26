@@ -122,3 +122,7 @@ Fnkfynblf1987 пароль
 perekalskiy_igor@mail.ru
 Fnkfynbfl1987
 
+Сайт доступен по домену perekalskiy.ddns.net
+Логин и праоль от /my.noip.com
+perekalskiy.igor@gmail.com
+Fnkfynblf1987
